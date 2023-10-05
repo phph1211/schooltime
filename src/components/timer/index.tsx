@@ -66,19 +66,27 @@ const Timer = () => {
         homeTimeHour -= 1;
       }
 
-      const lunchTime =
+      let lunchTime =
         hour >= 0 && hour < 12
           ? `${lunchTimeHour}시간 ${lunchTimeMinute}분`
           : minute < 30
           ? `${lunchTimeHour}시간 ${lunchTimeMinute}분`
           : "-";
 
-      const homeTime =
+      if (hour > 12) {
+        lunchTime = "-";
+      }
+
+      let homeTime =
         hour >= 0 && hour < 16
           ? `${homeTimeHour}시간 ${homeTimeMinute}분`
           : minute < 10
           ? `${homeTimeHour}시간 ${homeTimeMinute}분`
           : "-";
+
+      if (hour > 16) {
+        homeTime = "-";
+      }
 
       setUpdateState({ lunchTime, homeTime });
     }, 1000);
