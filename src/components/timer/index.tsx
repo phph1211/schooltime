@@ -80,8 +80,6 @@ const Timer = () => {
           ? `${homeTimeHour}시간 ${homeTimeMinute}분`
           : "-";
 
-      //수정해야할것 : 각각 1시 20분, 4시 10분에 " - " 로 바뀌게 수정해야함 / 현재 각각 1시, 4시에 바뀜
-
       setUpdateState({ lunchTime, homeTime });
     }, 1000);
   }, []);
